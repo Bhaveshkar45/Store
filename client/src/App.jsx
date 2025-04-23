@@ -10,8 +10,9 @@ import NotFound from "./pages/auth/not-found";
 import AuthRegister from "./pages/auth/register"
 //import { Routes } from "react-router-dom"
 import {  Router, Routes, Route } from 'react-router-dom';
-
-
+import ShoppingHome from "./pages/auth/shopping-view/home";
+import ShoppingCheckout from "./pages/auth/shopping-view/checkout";
+import ShoppingListing from "./pages/auth/shopping-view/listing";
 
 
 function App() {
@@ -31,9 +32,15 @@ function App() {
                <Route path="dashboard" element={<AdminDashboard/>}/>
             </Route> 
                 <Route path="/shop" element={<ShoppingLayout/>}>
-                  <Route path="header" element={<ShoppingHeader/>}/>
-                  <Route path="*" element={<NotFound/>}/>
+
+                <Route path="account" element={<ShoppingHome/>}/>
+                <Route path="checkout" element={<ShoppingCheckout/>}/>
+                <Route path="home" element={<ShoppingHome/>}/>
+                <Route path="listing" element={<ShoppingListing/>}/>
+
                 </Route> 
+                  <Route path="header" element={<ShoppingHeader/>}/>
+                  <Route path="*" element={<NotFound/>}/>                
         </Routes>
      
 
